@@ -1,0 +1,21 @@
+//U504007A JOB (ACCTNUM,EXP),'SEARCH',CLASS=D,                      
+//         NOTIFY=&SYSUID,MSGCLASS=X,MSGLEVEL=(1,1)                 
+//*                                                                 
+//STEP0010 EXEC PGM=IDCAMS                                          
+//SYSPRINT DD SYSOUT=*                                         
+//SYSIN    DD *                                                 
+  DELETE U504007.DESA.SAIDA PURGE
+/* 
+//*I WAS NOT CLOSING THE PROGRAMA
+//STEP0020 EXEC PGM=PRGINSP2                                    
+//******************************************************************
+//*THE QUESTION IS SORTIN/SORTOUT OR THE NAME OF THE ARQUIVE
+//SYSOUT    DD SYSOUT=*                                             
+//SORTIN    DD DSN=U504007.DESA.ARQUIVO1,                            
+//             DISP=SHR                                             
+//SORTOUT   DD DSN=U504007.DESA.SAIDA,                             
+//             DISP=(,CATLG,DELETE),                                
+//             SPACE=(TRK,(10,10),RLSE),                           
+//             LRECL=150,RECFM=FB                      
+//SYSIN     DD *                                            
+/*               
